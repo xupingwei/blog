@@ -1,4 +1,4 @@
-package link.liwei.app.blog.custom;
+package link.liwei.app.blog.basic.controller;
 
 import link.liwei.app.blog.basic.entity.ResultBean;
 import link.liwei.app.blog.basic.entity.po.User;

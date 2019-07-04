@@ -15,7 +15,7 @@ public class Role extends BaseEntity {
     @TableId(value = "role_id", type = IdType.AUTO)
     private Long roleId;
     /**
-     * 角色名称
+     * 角色名称 admin  user
      */
     @TableField(value = "role_name", exist = true)
     private String roleName;
@@ -27,7 +27,7 @@ public class Role extends BaseEntity {
      * 删除标志 1:未删除 0：删除
      */
     @TableField(value = "del_flag", exist = true)
-    private Integer delFlag = 0;
+    private Integer delFlag = 1;
 
 
     public Long getRoleId() {

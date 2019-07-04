@@ -21,15 +21,16 @@ public class User extends BaseEntity {
     private String email;
     private String phone;
     private String password;
+    private String token;
     /**
      * 性别 0：男  1：女  2：未知
      */
-    private Integer gender;
+    private Integer gender = 2;
     /**
      * 删除标志 1:未删除 0：删除
      */
     @TableField(value = "del_flag", exist = true)
-    private Integer delFlag;
+    private Integer delFlag = 1;
 
     public Long getUserId() {
         return userId;
@@ -37,6 +38,22 @@ public class User extends BaseEntity {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getUserName() {

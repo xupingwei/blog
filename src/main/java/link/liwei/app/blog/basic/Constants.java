@@ -45,13 +45,13 @@ public class Constants {
 
     public static HashMap<Integer, String> VALUES = new HashMap<>();
     //预定会议室场地订单不存在
-    public static  final int MEETING_AREA_ORDER_NOT_FOUND=1018;
+    public static final int MEETING_AREA_ORDER_NOT_FOUND = 1018;
     //会议室角色
-    public static  final int MEETING_ROLE =1019;
+    public static final int MEETING_ROLE = 1019;
     //预定会议室场地时间不存在
-    public static  final int MEETING_AREA_TIME_NOT_FOUND=1020;
+    public static final int MEETING_AREA_TIME_NOT_FOUND = 1020;
     //预定会议室场地不存在
-    public static  final int MEETING_AREA_NOT_FOUND=1021;
+    public static final int MEETING_AREA_NOT_FOUND = 1021;
     //会议室预约时间冲突
     public static final int ORDER_TIME_IS_CONFLICT = 1022;
     //预约起始时间应小于预约结束时间
@@ -62,6 +62,8 @@ public class Constants {
     public static final int SEARCH_PHONE_OR_NAME_NOT_EMPTY = 1025;
     //邮件发送失败
     public static final int MAIL_SEND_FAIL = 1026;
+    //注册失败
+    public static final int REGISTER_FAILED = 1027;
 
     static {
         VALUES.put(SUCCESS, "成功");
@@ -74,22 +76,23 @@ public class Constants {
         VALUES.put(KEY_NOT_EMPTY, "key值不能为空");
         VALUES.put(PARAMETER_NOT_EMPTY, "参数不能为空");
         VALUES.put(PARAMETER_IS_INCORRECT, "参数不正确");
-        VALUES.put(PHONE_NUM_NOT_EMPTY,"手机号不能为空");
-        VALUES.put(PHONE_NUM_IS_INCORRECT,"不是一个合法的手机号");
-        VALUES.put(PASSWORD_IS_EMPTY,"密码不能为空");
-        VALUES.put(PASSWORD_IS_INCORRECT,"密码必须由数字及字母组成且长度必须大于等于6位");
-        VALUES.put(NO_USER_LOGIN,"当前无用户登录");
-        VALUES.put(OLDPASSWORD_NOT_SAME_NEWPASSWORD,"旧密码不能和新密码相同");
-        VALUES.put(OLDPASSWORD_IS_INCORRECT,"旧密码不正确");
-        VALUES.put(PASSWORD_IS_NOT_MEET_RULE,"密码不正确");
-        VALUES.put(MEETING_AREA_ORDER_NOT_FOUND,"预定会议室场地订单不存在");
-        VALUES.put(MEETING_ROLE,"角色信息不存在");
-        VALUES.put(MEETING_AREA_TIME_NOT_FOUND,"预定会议室场地时间不存在");
-        VALUES.put(MEETING_AREA_NOT_FOUND,"预定会议室场地不存在");
-        VALUES.put(ORDER_TIME_IS_CONFLICT,"会议室预约时间冲突");
-        VALUES.put(ORDER_STARTTIME_LESS_ENDTIME,"预约起始时间应小于预约结束时间");
-        VALUES.put(ORDER_STARTTIME_IS_OUTDATE,"当前预约起始时间已过时");
-        VALUES.put(SEARCH_PHONE_OR_NAME_NOT_EMPTY,"搜素的手机号或者姓名不能为空");
-        VALUES.put(MAIL_SEND_FAIL,"邮件发送失败");
+        VALUES.put(PHONE_NUM_NOT_EMPTY, "手机号不能为空");
+        VALUES.put(PHONE_NUM_IS_INCORRECT, "不是一个合法的手机号");
+        VALUES.put(PASSWORD_IS_EMPTY, "密码不能为空");
+        VALUES.put(PASSWORD_IS_INCORRECT, "密码必须由数字及字母组成且长度必须大于等于6位");
+        VALUES.put(NO_USER_LOGIN, "当前无用户登录");
+        VALUES.put(OLDPASSWORD_NOT_SAME_NEWPASSWORD, "旧密码不能和新密码相同");
+        VALUES.put(OLDPASSWORD_IS_INCORRECT, "旧密码不正确");
+        VALUES.put(PASSWORD_IS_NOT_MEET_RULE, "密码不正确");
+        VALUES.put(MEETING_AREA_ORDER_NOT_FOUND, "预定会议室场地订单不存在");
+        VALUES.put(MEETING_ROLE, "角色信息不存在");
+        VALUES.put(MEETING_AREA_TIME_NOT_FOUND, "预定会议室场地时间不存在");
+        VALUES.put(MEETING_AREA_NOT_FOUND, "预定会议室场地不存在");
+        VALUES.put(ORDER_TIME_IS_CONFLICT, "会议室预约时间冲突");
+        VALUES.put(ORDER_STARTTIME_LESS_ENDTIME, "预约起始时间应小于预约结束时间");
+        VALUES.put(ORDER_STARTTIME_IS_OUTDATE, "当前预约起始时间已过时");
+        VALUES.put(SEARCH_PHONE_OR_NAME_NOT_EMPTY, "搜素的手机号或者姓名不能为空");
+        VALUES.put(MAIL_SEND_FAIL, "邮件发送失败");
+        VALUES.put(REGISTER_FAILED, "注册失败");
     }
 }

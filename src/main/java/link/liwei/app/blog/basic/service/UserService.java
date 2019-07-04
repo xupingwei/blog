@@ -4,5 +4,5 @@ import link.liwei.app.blog.basic.entity.po.User;
 
 public interface UserService {
 
-    int insert(User user);
+    User insert(User user);
 }

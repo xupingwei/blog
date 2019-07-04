@@ -10,23 +10,23 @@ import com.baomidou.mybatisplus.annotation.TableName;
 public class UserRole {
 
     @TableField(value = "user_id")
-    private String userId;
+    private Long userId;
     @TableField(value = "role_id")
-    private String roleId;
+    private Long roleId;
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(String roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
