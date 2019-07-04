@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
-@MapperScan(basePackages = "com.baomidou.mybatisplus.samples.quickstart.mapper")
+@MapperScan(basePackages = "link.liwei.app.blog.basic.dao")
 @SpringBootApplication
 public class BlogApplication implements WebMvcConfigurer {
 
