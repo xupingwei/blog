@@ -21,7 +21,7 @@ public class User extends BaseEntity {
     private String email;
     private String phone;
     private String password;
-    private String token;
+    private String token = "";
     /**
      * 性别 0：男  1：女  2：未知
      */

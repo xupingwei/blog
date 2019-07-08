@@ -7,6 +7,7 @@ import link.liwei.app.blog.basic.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,6 +19,13 @@ public class UserController {
 
     @PostMapping("/register")
     public ResultBean register(User user) {
-        return ResultUtils.success(userService.insert(user));
+        return ResultUtils.success(userService.register(user));
+    }
+
+
+    @PostMapping("/login")
+    public ResultBean login(@RequestParam("phone") String phone,
+                            @RequestParam("password") String password) {
+        return ResultUtils.success(userService.login(phone, password));
     }
 }
