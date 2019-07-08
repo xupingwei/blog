@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import link.liwei.app.blog.basic.Constants;
 import link.liwei.app.blog.basic.dao.UserDao;
 import link.liwei.app.blog.basic.entity.po.User;
-import link.liwei.app.blog.basic.exce.AuthException;
+import link.liwei.app.blog.basic.exce.BusinessException;
 import link.liwei.app.blog.basic.service.UserService;
 import link.liwei.app.blog.basic.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,11 @@ public class UserServiceImpl implements UserService {
     public User insert(User user) {
         String token = JwtUtil.sign(user.getPhone(), user.getPassword());
         user.setToken(token);
-        user.setCreateTime(new Date(System.currentTimeMillis()));
         user.setUpdateTime(new Date(System.currentTimeMillis()));
+        user.setCreateTime(new Date(System.currentTimeMillis()));
         int i = userDao.insert(user);
         if (i == 0) {
-            throw new AuthException(Constants.VALUES.get(Constants.REGISTER_FAILED));
+            throw new BusinessException(Constants.VALUES.get(Constants.REGISTER_FAILED));
         }
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("token", token);

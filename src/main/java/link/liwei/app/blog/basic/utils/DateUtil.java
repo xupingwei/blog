@@ -112,26 +112,27 @@ public class DateUtil {
     }
 
     public static void main(String[] args) {
-        Date d = addDate(new Date(), -5, Calendar.MONTH);
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        //Calendar calendar = Calendar.getInstance();
-        Date theDate = d;
-
-        GregorianCalendar gcLast = (GregorianCalendar) Calendar.getInstance();
-        gcLast.setTime(theDate);
-        gcLast.set(Calendar.DAY_OF_MONTH, 1);
-        String day_first = df.format(gcLast.getTime());
-        StringBuffer str = new StringBuffer().append(day_first);
-
-
-        Calendar calendar = Calendar.getInstance();
-        // 设置日期为本月最大日期
-        calendar.setTime(d);
-        calendar.set(Calendar.DATE, calendar.getActualMaximum(Calendar.DATE));
-        // 打印
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String s = format.format(calendar.getTime());
-        System.out.println(str  +  ":::" + s);
+//        Date d = addDate(new Date(), -5, Calendar.MONTH);
+//        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//        //Calendar calendar = Calendar.getInstance();
+//        Date theDate = d;
+//
+//        GregorianCalendar gcLast = (GregorianCalendar) Calendar.getInstance();
+//        gcLast.setTime(theDate);
+//        gcLast.set(Calendar.DAY_OF_MONTH, 1);
+//        String day_first = df.format(gcLast.getTime());
+//        StringBuffer str = new StringBuffer().append(day_first);
+//
+//
+//        Calendar calendar = Calendar.getInstance();
+//        // 设置日期为本月最大日期
+//        calendar.setTime(d);
+//        calendar.set(Calendar.DATE, calendar.getActualMaximum(Calendar.DATE));
+//        // 打印
+//        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//        String s = format.format(calendar.getTime());
+//        System.out.println(str + ":::" + s);
+        System.out.println(getDateByTime(System.currentTimeMillis()));
     }
 
     public static long getTimeInMillis(Date date) {
@@ -271,6 +272,19 @@ public class DateUtil {
         return data;
     }
 
+
+    /**
+     * 获取年月日时间字符串
+     *
+     * @param time
+     * @return
+     */
+    public static String getDateByTime(Long time) {
+        Date date = new Date(time);
+        String data = DateUtil.dateToString(date, DateUtil.DATATIME_FORMMATER);
+        return data;
+    }
+
     public static String getYesterdayStart() {
         Date date = new Date();//取时间
         Calendar calendar = new GregorianCalendar();
@@ -332,30 +346,30 @@ public class DateUtil {
     }
 
     /**
-     *
      * @param months
      * @return
      */
     public static String getBeforeTime(int months) {
-        Date dNow = StringToDate(getBeforeFirstDay(new Date()),DATA_FORMATER);   //当前时间
+        Date dNow = StringToDate(getBeforeFirstDay(new Date()), DATA_FORMATER);   //当前时间
         Calendar calendar = Calendar.getInstance(); //得到日历
         calendar.setTime(dNow);//把当前时间赋给日历
-        calendar.add(calendar.MONTH,months);  //设置为前几月的时间
+        calendar.add(calendar.MONTH, months);  //设置为前几月的时间
         String str = dateToString(calendar.getTime(), DATA_FORMATER); //格式化并返回
-        return  str.toString();
+        return str.toString();
     }
 
     /**
      * 几月后的日期，
+     *
      * @param months
      * @return
      */
     public static String getAfterTime(int months) {
-        Date dNow = StringToDate(getAfterLastDay(new Date()),DATA_FORMATER);   //当前时间
+        Date dNow = StringToDate(getAfterLastDay(new Date()), DATA_FORMATER);   //当前时间
         Calendar calendar = Calendar.getInstance(); //得到日历
         calendar.setTime(dNow);//把当前时间赋给日历
-        calendar.add(calendar.MONTH,months);  //设置为前几月的时间
+        calendar.add(calendar.MONTH, months);  //设置为前几月的时间
         String str = dateToString(calendar.getTime(), DATA_FORMATER); //格式化并返回
-        return  str.toString();
+        return str.toString();
     }
 }

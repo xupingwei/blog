@@ -67,17 +67,16 @@ public class ShiroRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-
         String token = (String) authenticationToken.getCredentials();
         if (StringUtils.isEmpty(token)) {
-            throw new AuthenticationException("Token is invalid");
+            throw new AuthenticationException("token is Empty");
         }
+        System.out.println("token = " + token);
         //解密获得username，用于和数据库对比
         String phone = JwtUtil.getUsername(token);
         if (StringUtils.isEmpty(phone)) {
-            throw new AuthException("Token is invalid");
+            throw new AuthException("username is Empty");
         }
-        System.out.println("token = " + token);
         QueryWrapper<User> userWrapper = new QueryWrapper();
         userWrapper.eq("phone", phone);
         User user = userDao.selectOne(userWrapper);
@@ -85,7 +84,7 @@ public class ShiroRealm extends AuthorizingRealm {
             throw new AuthException("user does not exist");
         }
         if (!JwtUtil.verify(token, phone, user.getPassword())) {
-            throw new AuthException("Incorrect username or password");
+            throw new AuthException("incorrect username or password");
         }
         return new SimpleAuthenticationInfo(token, token, "my_realm");
     }

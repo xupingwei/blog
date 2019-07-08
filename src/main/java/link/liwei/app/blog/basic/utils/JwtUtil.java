@@ -9,7 +9,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import java.sql.Date;
 
 public class JwtUtil {
-    private static final long EXPIRE_TIME = 1 * 60 * 1000;
+    private static final long EXPIRE_TIME = 5 * 60 * 1000;
 
     /**
      * 校验token是否正确
@@ -38,7 +38,7 @@ public class JwtUtil {
      *
      * @return token中包含的用户名
      */
-    public static String getUsername(String token){
+    public static String getUsername(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
             return jwt.getClaim("username").asString();

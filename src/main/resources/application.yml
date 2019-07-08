@@ -29,7 +29,7 @@ spring:
       stat-view-servlet:
         url-pattern: "/druid/*"
         # IP白名单(没有配置或者为空，则允许所有访问)
-        allow: 127.0.0.1,192.168.163.1
+        allow: 127.0.0.1,0.0.0.0
         # IP黑名单 (存在共同时，deny优先于allow)
         deny: 192.168.1.73
         #  禁用HTML页面上的“Reset All”功能
@@ -41,3 +41,5 @@ spring:
   # 响应json null值过滤
   jackson:
     default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
