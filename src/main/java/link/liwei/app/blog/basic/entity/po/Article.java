@@ -34,6 +34,17 @@ public class Article extends BaseEntity {
     @TableField(value = "del_flag", exist = true)
     private Integer delFlag = 1;
 
+    public Article() {
+    }
+
+    public Article(String brief, String content, String author, String keyWords, String classify) {
+        this.brief = brief;
+        this.content = content;
+        this.author = author;
+        this.keyWords = keyWords;
+        this.classify = classify;
+    }
+
     public Long getArticleId() {
         return articleId;
     }

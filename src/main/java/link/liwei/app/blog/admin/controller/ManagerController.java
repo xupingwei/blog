@@ -1,4 +1,4 @@
-package link.liwei.app.blog.admin;
+package link.liwei.app.blog.admin.controller;
 
 import link.liwei.app.blog.basic.entity.ResultBean;
 import link.liwei.app.blog.basic.utils.ResultUtils;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/admin")
 public class ManagerController {
 
-    @PostMapping("/home")
-    public ResultBean home() {
+    @PostMapping("/create")
+    public ResultBean create() {
         return ResultUtils.success();
     }
 }
