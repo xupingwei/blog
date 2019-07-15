@@ -17,6 +17,8 @@ public class Article extends BaseEntity {
 
     @TableId(value = "article_id", type = IdType.AUTO)
     private Long articleId;
+    @TableField(value = "article_title")
+    private String articleTitle; //文章标题
     private Integer comment;   //评论
     private Integer browse;  //浏览
     private Integer like;  //点赞
@@ -29,7 +31,7 @@ public class Article extends BaseEntity {
     private String keyWords;  //文章关键字
     private String classify;  //文章分类
     /**
-     * 删除标志 1:未删除 0：删除
+     * 删除标志 1:未删除 0：删除  -1：草稿
      */
     @TableField(value = "del_flag", exist = true)
     private Integer delFlag = 1;
@@ -37,12 +39,14 @@ public class Article extends BaseEntity {
     public Article() {
     }
 
-    public Article(String brief, String content, String author, String keyWords, String classify) {
+    public Article(String brief, String content, String author,
+                   String keyWords, String classify, String title) {
         this.brief = brief;
         this.content = content;
         this.author = author;
         this.keyWords = keyWords;
         this.classify = classify;
+        this.articleTitle = title;
     }
 
     public Long getArticleId() {
