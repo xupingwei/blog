@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
             throw new BusinessException("账号或密码错误");
         }
         user.setUpdateTime(new Date(System.currentTimeMillis()));
-        user.setToken(JwtUtil.sign(user.getPhone(), MD5Util.string2MD5(user.getPassword())));
+        user.setToken(JwtUtil.sign(user.getPhone(), user.getPassword()));
         userDao.updateById(user);
         return userDao.selectById(user.getUserId());
     }

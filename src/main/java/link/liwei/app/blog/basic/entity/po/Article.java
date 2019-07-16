@@ -22,6 +22,7 @@ public class Article extends BaseEntity {
     private Integer comment;   //评论
     private Integer browse;  //浏览
     private Integer like;  //点赞
+    @TableField(value = "pub_time")
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date pubTime;  //发布时间
     private String brief;  //文章简介
